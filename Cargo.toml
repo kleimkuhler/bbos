@@ -4,11 +4,7 @@ version = "0.1.0"
 authors = ["Kevin Leimkuhler <me@kleimkuhler.com>"]
 
 [dependencies]
+bootloader_precompiled = "0.2.0"
 
-# profile used for `cargo build`
-[profile.dev]
-panic = "abort" # disable stack unwinding on panic
-
-# profile used for `cargo build --release`
-[profile.release]
-panic = "abort" # disable stack unwinding on panic
+[package.metadata.bootimage]
+default-target = "x86_64-bbos.json"
