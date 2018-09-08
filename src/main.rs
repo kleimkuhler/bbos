@@ -1,4 +1,4 @@
-#![feature(panic_implementation)] // use unstable `panic_implementation` attribute
+#![feature(panic_handler)] // use unstable `panic_implementation` attribute
 #![no_std] // do not implicitly link the standard library
 #![no_main] // do not use the normal entry point chain
 
@@ -9,7 +9,7 @@ use core::panic::PanicInfo;
 mod vga_buffer;
 
 /// This function is called on panic
-#[panic_implementation]
+#[panic_handler]
 #[no_mangle]
 pub fn panic(_info: &PanicInfo) -> ! {
     loop {}
